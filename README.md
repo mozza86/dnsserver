@@ -1,4 +1,4 @@
-# muulshnet dns server
+# Seisokhon dns server
 
 ## state
 it works except it doesn't give any answers
