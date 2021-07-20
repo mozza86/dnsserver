@@ -55,8 +55,6 @@ type DNSMessage struct {
 func (dnsheader *DNSHeader) ApplyTo(message []byte) []byte {
 	copy(message[0:2], dnsheader.ID)
 
-	// TODO: flags
-
 	var firstByte string
 	var lastByte string
 
