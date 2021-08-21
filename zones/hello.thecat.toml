@@ -1,0 +1,41 @@
+# customdomain
+
+domain = "hello.thecat"
+
+[soa]
+[soa.thecat.hello]
+class = "in"
+mail = "hostmaster.hello.thecat"
+serial = 2021081801
+refresh = 3600
+retry = 1800
+expire = 604800
+ttl = 600
+
+[a]
+[a.thecat.hello]
+class = "in"
+ttl = 3600
+data = "127.0.0.1"
+
+[a.thecat.hello.www]
+class = "in"
+ttl = 3600
+data = "127.0.0.1"
+
+[aaaa]
+[aaaa.thecat.hello]
+class = "in"
+ttl = 3600
+data = "::1"
+
+[aaaa.thecat.hello.www]
+class = "in"
+ttl = 3600
+data = "::1"
+
+[txt]
+[txt.thecat.hello]
+class = "in"
+ttl = 3600
+data = "hello world"

@@ -1,0 +1,6 @@
+$ORIGIN hello.thecat.     ; designates the start of this zone file in the namespace
+$TTL 3600                 ; default expiration time (in seconds) of all RRs without their own TTL value
+hello.thecat.  IN  SOA   ns.hello.thecat. hostmaster.hello.thecat. ( 2020091025 7200 3600 1209600 3600 )
+hello.thecat.  IN  A     127.0.0.1              ; IPv4 address for hello.thecat
+               IN  AAAA  ::1                    ; IPv6 address for hello.thecat
+www            IN  CNAME hello.thecat.          ; www.hello.thecat is an alias for hello.thecat
