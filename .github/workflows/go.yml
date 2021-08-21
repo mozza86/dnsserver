@@ -1,9 +1,8 @@
 name: Go
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags:
+      - 'v[0-9]+.*'
 
 jobs:
   create_release:
