@@ -4,7 +4,7 @@
 it works except it doesn't give any answers
 - [x] Udp Server
 - [x] listen to the requests
-- [ ] reply with the correct thing
+- [x] reply with the correct thing
 
 - [ ] Tcp Server
 - [ ] listen to the requests
