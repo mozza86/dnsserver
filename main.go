@@ -146,6 +146,14 @@ func sendResponse(conn *net.UDPConn, addr *net.UDPAddr, questionmsg DNSMessage, 
 			questionmsg.answer.RDDATA = []byte{0x2a, 0x00, 0x14, 0x50, 0x40, 0x07, 0x80, 0x0b, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x20, 0x0e}
 		}
 	}
+	if questionmsg.question.GetDomain() == "localhost" {
+		if getType(questionmsg.question.QTYPE) == "A" {
+			questionmsg.answer.RDDATA = []byte{127, 0, 0, 1}
+		}
+		if getType(questionmsg.question.QTYPE) == "AAAA" {
+			questionmsg.answer.RDDATA = []byte{0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x01}
+		}
+	}
 	if questionmsg.question.GetDomain() == "discord.com" ||
 		questionmsg.question.GetDomain() == "remote-auth-gateway.discord.gg" ||
 		questionmsg.question.GetDomain() == "gateway.discord.gg" ||
