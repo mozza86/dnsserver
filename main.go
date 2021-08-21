@@ -138,9 +138,6 @@ func sendResponse(conn *net.UDPConn, addr *net.UDPAddr, questionmsg DNSMessage, 
 	if getType(questionmsg.question.QTYPE) == "A" {
 		questionmsg.answer.RDDATA = []byte{192, 168, 1, 16}
 	}
-	/*if getType(questionmsg.question.QTYPE) == "AAAA" {
-		questionmsg.answer.RDDATA = []byte{0x2a, 0x00, 0x14, 0x50, 0x40, 0x07, 0x80, 0x0b, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x20, 0x0e}
-	}*/
 	if questionmsg.question.GetDomain() == "google.com" {
 		if getType(questionmsg.question.QTYPE) == "A" {
 			questionmsg.answer.RDDATA = []byte{216, 58, 213, 78}
