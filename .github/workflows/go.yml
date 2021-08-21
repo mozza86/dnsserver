@@ -52,7 +52,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
-          asset_name: program-name-${{ matrix.config.os }}          
+          asset_name: dnsserver-${{ matrix.config.os }}.exe     
           asset_path: ./dnsserver.exe
           asset_content_type: application/octet-stream    
       - name: Upload release assets NIX
@@ -62,7 +62,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
-          asset_name: program-name-${{ matrix.config.os }}          
+          asset_name: dnsserver-${{ matrix.config.os }}        
           asset_path: ./dnsserver
           asset_content_type: application/octet-stream        
           
